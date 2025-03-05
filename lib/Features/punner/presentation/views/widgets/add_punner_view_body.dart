@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_store_dashboard/Core/widgets/custom_button.dart';
 import 'package:fruits_store_dashboard/Core/widgets/custom_text_field.dart';
+import 'package:fruits_store_dashboard/Core/widgets/Image_Field.dart';
 
 class AddPunnerViewBody extends StatefulWidget {
   const AddPunnerViewBody({super.key});
@@ -22,7 +24,7 @@ class _AddPunnerViewBodyState extends State<AddPunnerViewBody> {
           child: Column(
             children: [
               SizedBox(
-                height: 20.0,
+                height: 50.0,
               ),
               CustomTextFormField(
                 hintText: "نوع العرض",
@@ -34,6 +36,19 @@ class _AddPunnerViewBodyState extends State<AddPunnerViewBody> {
               CustomTextFormField(
                 hintText: "قيمه خصم العرض",
                 textInputType: TextInputType.text,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              ImageField(
+                onChanged: (value) {},
+              ),
+              SizedBox(
+                height: 70.0,
+              ),
+              CustomButton(
+                text: "إضافة",
+                onPressed: () {},
               ),
             ],
           ),
