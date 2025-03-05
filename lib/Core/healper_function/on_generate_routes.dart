@@ -5,7 +5,6 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
     case DashBoardView.routeName:
       return MaterialPageRoute(builder: (context) => const DashBoardView());
-
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }
