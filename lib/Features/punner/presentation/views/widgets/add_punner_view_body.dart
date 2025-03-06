@@ -1,11 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_store_dashboard/Core/widgets/custam_snak_bar.dart';
 import 'package:fruits_store_dashboard/Core/widgets/custom_button.dart';
 import 'package:fruits_store_dashboard/Core/widgets/custom_text_field.dart';
 import 'package:fruits_store_dashboard/Core/widgets/Image_Field.dart';
 import 'package:fruits_store_dashboard/Features/punner/domain/Entites/punner_entity.dart';
+import 'package:fruits_store_dashboard/Features/punner/presentation/manager/addpunnerCubit/addpunner_cubit.dart';
 
 class AddPunnerViewBody extends StatefulWidget {
   const AddPunnerViewBody({super.key});
@@ -69,6 +71,7 @@ class _AddPunnerViewBodyState extends State<AddPunnerViewBody> {
                         namePunnerTwo: offerTwo,
                         image: image!,
                       );
+                      context.read<AddpunnerCubit>().addPunner(inputPunner);
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});

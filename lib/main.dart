@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits_store_dashboard/Core/healper_function/on_generate_routes.dart';
+import 'package:fruits_store_dashboard/Core/services/get_it.dart';
 import 'package:fruits_store_dashboard/Features/dash_board_screen/presentation/views/dash_board_view.dart';
 import 'package:fruits_store_dashboard/firebase_options.dart';
 
@@ -9,6 +10,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  setup();
   runApp(const FruitsStoreDashboard());
 }
 

@@ -1,11 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_store_dashboard/Core/widgets/custam_snak_bar.dart';
 import 'package:fruits_store_dashboard/Core/widgets/custom_button.dart';
 import 'package:fruits_store_dashboard/Core/widgets/custom_text_field.dart';
 import 'package:fruits_store_dashboard/Core/widgets/Image_Field.dart';
 import 'package:fruits_store_dashboard/Features/add_product/domain/Entites/Product_Entity.dart';
+import 'package:fruits_store_dashboard/Features/add_product/presentation/manager/addproductCubit/addproduct_cubit.dart';
 
 class AddProductViewBody extends StatefulWidget {
   const AddProductViewBody({super.key});
@@ -123,6 +125,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                         numberOfCalories: numberOfCallorys.toInt(),
                         unitAmount: unitAmmount.toInt(),
                       );
+                      context.read<AddproductCubit>().addProduct(input);
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});
