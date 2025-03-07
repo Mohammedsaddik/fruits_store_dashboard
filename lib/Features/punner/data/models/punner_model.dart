@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:fruits_store_dashboard/Features/add_product/domain/Entites/Product_Entity.dart';
 import 'package:fruits_store_dashboard/Features/punner/domain/Entites/punner_entity.dart';
 
 class PunnerModel {

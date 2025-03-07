@@ -104,7 +104,9 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                 height: 16.0,
               ),
               ImageField(
-                onChanged: (value) {},
+                onChanged: (image) {
+                  this.image = image;
+                },
               ),
               SizedBox(
                 height: 16.0,
@@ -119,11 +121,11 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                         name: name,
                         code: code,
                         description: description,
-                        price: price,
-                        image: image!,
                         expirationsMonths: expirationMonthly.toInt(),
                         numberOfCalories: numberOfCallorys.toInt(),
                         unitAmount: unitAmmount.toInt(),
+                        price: price,
+                        image: image!,
                       );
                       context.read<AddproductCubit>().addProduct(input);
                     } else {

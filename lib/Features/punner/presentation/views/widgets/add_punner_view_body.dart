@@ -55,7 +55,9 @@ class _AddPunnerViewBodyState extends State<AddPunnerViewBody> {
                 height: 20.0,
               ),
               ImageField(
-                onChanged: (value) {},
+                onChanged: (image) {
+                  this.image = image;
+                },
               ),
               SizedBox(
                 height: 70.0,
@@ -66,12 +68,12 @@ class _AddPunnerViewBodyState extends State<AddPunnerViewBody> {
                   if (image != null) {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
-                      PunnerEntity inputPunner = PunnerEntity(
+                      PunnerEntity punnerinput = PunnerEntity(
                         namePunnerOne: offerOne,
                         namePunnerTwo: offerTwo,
                         image: image!,
                       );
-                      context.read<AddpunnerCubit>().addPunner(inputPunner);
+                      context.read<AddpunnerCubit>().addPunner(punnerinput);
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});
